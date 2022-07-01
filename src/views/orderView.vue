@@ -6,11 +6,12 @@
 import Items from '../components/Items.vue';
 export default {
   components: { Items },
-  emits:['add-to-cart'],
   methods:{
     callit(name){
-      alert(name)
+       this.$emit("add-to-cart",name)
     }
-  }
+  },
+  emits:['add-to-cart']
+
 }
 </script>

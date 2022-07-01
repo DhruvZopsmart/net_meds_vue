@@ -3,7 +3,7 @@
     <div class="row">
     <div :key="item.id" v-for="item in items" class='col' style="padding:1rem" >
       <!-- <p>{{item.name}}</p> -->
-      <Item :arg="item" @add-to-cart="$emit('add-to-cart',name)"/>
+      <Item :arg="item" @add-to-cart="callit"/>
     </div>
     <!-- <h1> {{items[0].name}}</h1> -->
     </div>
@@ -12,7 +12,6 @@
 
 <script>
 import Item from "../components/Item.vue";
-
 export default {
   components: {
     Item,
@@ -20,7 +19,7 @@ export default {
   emits:['add-to-cart'],
   methods:{
     callit(name){
-        alert(name)
+        this.$emit("add-to-cart",name)
     }
   },
   data() {

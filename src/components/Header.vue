@@ -11,12 +11,14 @@
   <div class="collapse navbar-collapse "  id="navbarText">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-                 <router-link to="/cart" class="nav-link text-white ">cart</router-link>
+                 <router-link to="/order" class="nav-link text-white ">order</router-link>
 
       </li>
     
       <li class="nav-item">
-          <router-link to="/order" class="nav-link text-white ">order</router-link>
+                 <router-link to="/cart" class="nav-link text-white ">cart <sup className="badge bg-secondary">
+                        {{size.length === 0 ? undefined : size.length}}
+                      </sup> </router-link>
       </li>
     </ul>
   
@@ -24,3 +26,11 @@
 </nav>
   </div>
 </template>
+
+<script>
+export default {
+   props: {
+    size: Object,
+  },
+}
+</script>

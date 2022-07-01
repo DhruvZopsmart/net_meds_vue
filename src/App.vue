@@ -1,5 +1,5 @@
 <template>
-  <Header />
+  <Header :size="cart"/>
   <router-view @add-to-cart="addtocart" />
   <Footer />
 </template>
@@ -19,8 +19,10 @@ export default {
   emits:['add-to-cart'],
   methods: {
     addtocart(name) {
-
-      alert(name);
+    //  cart.push
+    alert(name.price);
+    this.cart.push(name);
+    console.log(cart);
     },
   },
 };

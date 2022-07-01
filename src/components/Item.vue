@@ -5,7 +5,7 @@
     <h5 class="card-title">{{arg.name}}</h5>
     <p class="card-text">{{arg.para}}</p>
      <p >$ {{arg.price}}</p>
-    <button href="#"  @click="$emit('add-to-cart',arg.name)" class="btn btn-primary">add to cart</button>
+    <button href="#"  @click="$emit('add-to-cart',arg)" class="btn btn-primary">add to cart</button>
   </div>
 </div>
 </template>
