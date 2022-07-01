@@ -1,11 +1,30 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <Header />
+  <router-view @add-to-cart="addtocart" />
+  <Footer />
 </template>
 
+<script>
+import Header from "./components/Header.vue";
+import Footer from "./components/Footer.vue";
+
+export default {
+  components: { Header, Footer },
+
+  data() {
+    return {
+      cart: [],
+    };
+  },
+  emits:['add-to-cart'],
+  methods: {
+    addtocart(name) {
+
+      alert(name);
+    },
+  },
+};
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
