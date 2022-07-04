@@ -1,7 +1,7 @@
 <template>
   <Header :size="cart"/>
-  <router-view @add-to-cart="addtocart" />
-  <Footer />
+  <router-view @add-to-cart="addtocart" :cart="cart" @remove-item="remove" :price="price" />
+  <Footer  style="padding-bottom:0px"/>
 </template>
 
 <script>
@@ -14,16 +14,26 @@ export default {
   data() {
     return {
       cart: [],
+      price:0
     };
   },
   emits:['add-to-cart'],
   methods: {
     addtocart(name) {
-    //  cart.push
-    alert(name.price);
-    this.cart.push(name);
-    console.log(cart);
+    // alert(name.price);
+    this.price += name.price;
+    this.cart.push({...name , uid : new Date().toISOString()});
+    // console.log(cart);
     },
+    remove(itemUid){
+      // alert(itemUid); 
+       this.cart =  this.cart.filter((item)=>{
+         if(item.uid !== itemUid)
+          return item ;
+          else this.price -= item.price;
+       })
+      //  alert(cart);s 
+    }
   },
 };
 </script>

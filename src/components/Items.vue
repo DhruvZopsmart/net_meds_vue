@@ -30,7 +30,7 @@ export default {
           url: "https://images-na.ssl-images-amazon.com/images/I/31tMI-F9iwL._AC_.jpg",
           id: 1,
           price: 70,
-          para: "Approved for at least 95 percent filtration efficiency",
+          para: "Approved for at  least 99.9999% percent filtration efficiency",
         },
         {
           name: "Dettol Hand Sanitizer",
